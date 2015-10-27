@@ -1,7 +1,7 @@
 # WeatherStation-RPI
 Redesign of my previous RPI-WeatherStation
 
-Actually parts in use:
+###### Actually parts in use:
 
 - R-Pi B+ (1st GEN)
 - DS18B20 TempSensor (from my SparePartBox)
@@ -12,7 +12,7 @@ Actually parts in use:
 - usual Tools and a Brain.
 
 
-Code used:
+###### Code used:
 
 - most Scripts from JeremyMorgan ( https://github.com/JeremyMorgan/Raspberry_Pi_Temperature )
 
