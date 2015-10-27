@@ -4,15 +4,16 @@ __author__ = 'jeremymorgan'
 import sys
 import urllib2
 import json
-import Adafruit_DHT
+#import Adafruit_DHT
 import Adafruit_BMP.BMP085 as BMP085
 
 # custom functions
 from ds18b20 import ds18b20_read_temp
+import tsl45315
 import luxreader
 
 # Instance of TSL2561 Class
-luxrdr = luxreader.TSL2561()
+luxrdr = tsl45315.TSL45315()
 
 # Config
 am2302Pin = 22
@@ -30,7 +31,7 @@ if dryrun:
     print '************************'
 
 # Select Sensors to Use
-useAM2302 = True
+useAM2302 = False
 useBMP180 = True
 useDS18B20 = True
 useTSL2561 = True
@@ -80,11 +81,11 @@ else:
 
 ## TSL2561 Lux Sensor
 if useTSL2561:
-    lux = luxrdr.readLux()      # Auto
+    lux = luxrdr.getLux()      # Auto
     #lux = luxrdr.readLux(1)     # Low Gain
     #lux = luxrdr.readLux(16)    # High Gain
 
-    lux = luxrdr.readLux()
+    lux = luxrdr.getLux()
 
     if dryrun:
         print 'TSL2561:'
@@ -101,6 +102,8 @@ highestTemp = max(tempList)
 lowestTemp = min(tempList)
 
 if dryrun:
+    print '************************\n'
+    print "Temperature Breakdown"
     print "Highest: " + str(highestTemp)
     print "Lowest: " + str(lowestTemp)
     print "Average: " + str(avgTemp)
