@@ -1,4 +1,4 @@
-# WeatherStation-RPI
+## WeatherStation-RPI
 Redesign of my previous RPI-WeatherStation
 
 ###### Actually parts in use:
